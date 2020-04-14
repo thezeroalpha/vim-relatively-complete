@@ -1,3 +1,8 @@
+if exists('g:loaded_relatively_complete_autoload')
+  finish
+endif
+let g:loaded_relatively_complete_autoload = 1
+
 " Save cwd, cd to dir enclosing file, then go back to saved dir when complete done
 function! relative_file_complete#SaveAndRestoreOnComplete()
   " Save the old cwd
