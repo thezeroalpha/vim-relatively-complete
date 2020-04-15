@@ -6,6 +6,8 @@ That's why this plugin exists.
 
 ## What?
 This plugin modifies Vim's insert filename completion feature to complete files relative to the file in the current buffer.
+When file completion is triggered, it temporarily changes the current working directory of the current buffer to the directory containing the file loaded in the buffer.
+On the `CompleteDone` event, the current working directory for the buffer is reset to its original value.
 If the cursor is positioned at the end of a (partial) absolute path, files are completed based on that path.
 That is, if the cursor is positioned after e.g. `/etc/` in the current buffer, the plugin will complete files/directories in `/etc/` (just like standard insert completion).
 
@@ -14,7 +16,7 @@ The plugin exposes one insert mode mapping:
 * `<Plug>RelativelyCompleteFile`: start completing filenames relative to the file in the current buffer
 
 There are no default mappings (by design, so as not to force mappings on users), so you need to map this `<Plug>` yourself.
-For example, by putting this line in your .vimrc: `imap <C-x><C-f> <Plug>CompleteRelative`.
+For example, by putting this line in your .vimrc: `imap <C-x><C-f> <Plug>RelativelyCompleteFile`.
 
 **Disclaimer:** this code is not extensively tested.
 It works for me, running Vim 8.2 in the terminal on macOS, but it's not guaranteed to work for others.
