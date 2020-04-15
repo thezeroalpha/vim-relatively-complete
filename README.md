@@ -11,7 +11,7 @@ That is, if the cursor is positioned after e.g. `/etc/` in the current buffer, t
 
 The plugin exposes one insert mode mapping:
 
-* `<Plug>CompleteRelative`: start completing filenames relative to the file in the current buffer
+* `<Plug>RelativelyCompleteFile`: start completing filenames relative to the file in the current buffer
 
 There are no default mappings (by design, so as not to force mappings on users), so you need to map this `<Plug>` yourself.
 For example, by putting this line in your .vimrc: `imap <C-x><C-f> <Plug>CompleteRelative`.
